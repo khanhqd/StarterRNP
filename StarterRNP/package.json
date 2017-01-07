@@ -13,15 +13,17 @@
     "react-native": "0.39.2",
     "react-native-action-button": "^2.0.16",
     "react-native-circular-progress": "0.0.7",
+    "react-native-communications": "^2.1.4",
     "react-native-date-picker": "0.0.1",
     "react-native-drawer-layout": "^1.1.0",
+    "react-native-modal-picker": "0.0.16",
+    "react-native-navigation": "next",
     "react-native-router-flux": "^3.37.0",
     "react-native-scrollable-tab-view": "^0.7.0",
     "react-native-send-intent": "^1.0.13",
     "react-native-simple-modal": "^4.0.1",
     "react-native-swiper": "^1.5.4",
-    "react-native-vector-icons": "^3.0.0",
-    "react-native-navigation": "next"
+    "react-native-vector-icons": "^3.0.0"
   },
   "devDependencies": {
     "babel-jest": "18.0.0",

@@ -1,26 +1,22 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput } from 'react-native';
+import { View, Text, TextInput, Picker } from 'react-native';
 import CardSection from './CardSection';
 
-const Input = ({ title, value, onChangeText, placeholder}) => {
+const TitleBox = ({ title, children }) => {
   return(
     <View style={styles.box}>
       <View style={styles.titleContainer}>
         <Text style={styles.textTitle}>{title}</Text>
       </View>
       <View style={styles.contentBox}>
-        <TextInput
-          placeholder={placeholder}
-          style={styles.input}
-          value={value}
-          onChangeText={onChangeText}/>
+        {children}
       </View>
     </View>
   )
 }
 const styles = {
   input: {
-    color: 'rgb(1, 94, 170)',
+    color: '#000',
     paddingRight: 5,
     paddingLeft: 5,
     fontSize:15,
@@ -57,12 +53,10 @@ const styles = {
   textBox:{
     fontSize:15,
     padding:10,
-    paddingLeft:30,
-    color:'black'
+    paddingLeft:30
   },
   contentBox:{
-    paddingLeft:20,
-    height:80
+    paddingLeft:20
   }
 };
-export { Input };
+export { TitleBox };

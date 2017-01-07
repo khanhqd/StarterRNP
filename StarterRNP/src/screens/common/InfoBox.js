@@ -1,10 +1,24 @@
+import React, { Component } from 'react';
 import {
-  StyleSheet,
-  Dimensions
+  View,
+  Dimensions,
+  Text
 } from 'react-native';
 var {height, width} = Dimensions.get('window');
-const styles = StyleSheet.create({
 
+class InfoBox extends Component {
+  render(){
+    return(
+    <View style={styles.box}>
+      <View style={styles.titleContainer}>
+        <Text style={styles.textTitle}>{this.props.title}</Text>
+      </View>
+      <Text style={styles.textBox}>{this.props.content}</Text>
+    </View>
+    )
+  }
+}
+const styles = {
   box:{
     borderRadius: 3,
     borderWidth: 0.5,
@@ -13,7 +27,7 @@ const styles = StyleSheet.create({
     margin: 5,
     marginVertical: 1,
     overflow: 'hidden',
-    elevation:1
+    elevation:2
   },
   titleContainer:{
     borderBottomWidth: 0.5,
@@ -32,17 +46,11 @@ const styles = StyleSheet.create({
     fontSize:15,
     fontWeight:'bold'
   },
-  text:{
-    fontSize:15,
-    textAlign:'center',
-    color: 'rgb(1, 94, 170)'
-  },
   textBox:{
     fontSize:15,
     padding:10,
     paddingLeft:30,
     color: 'rgb(1, 94, 170)'
   },
-});
-
-module.exports = styles
+};
+export {InfoBox};

@@ -1,5 +1,16 @@
+import * as firebase from 'firebase';
 import { Navigation } from 'react-native-navigation';
 import { registerScreens } from './screens';
+
+const firebaseConfig = {
+    apiKey: "AIzaSyDcyWtJ8Bw3lf6bMunlTOtBGZqbdj-5y4k",
+    authDomain: "testfirebase-f4286.firebaseapp.com",
+    databaseURL: "https://testfirebase-f4286.firebaseio.com",
+    storageBucket: "testfirebase-f4286.appspot.com",
+    messagingSenderId: "469805774723"
+  };
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+
 registerScreens();
 
 // const createTabs = () => {
@@ -48,12 +59,9 @@ registerScreens();
 // // });
 Navigation.startSingleScreenApp({
   screen: {
-    screen: 'test.Home',
-    title: 'START NOW'
-  },
-   drawer: {
-     left: {
-      screen: 'test.SideMenu'
-    },
+    screen: 'screen.LoginForm',
   }
 });
+
+
+module.exports.firebaseApp = firebaseApp;

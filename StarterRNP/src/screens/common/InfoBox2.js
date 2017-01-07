@@ -1,32 +1,31 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput } from 'react-native';
-import CardSection from './CardSection';
+import {
+  View,
+  Dimensions,
+  Text,
+  Image,
+  TouchableOpacity
+} from 'react-native';
+var {height, width} = Dimensions.get('window');
 
-const Input = ({ title, value, onChangeText, placeholder}) => {
-  return(
+class InfoBox2 extends Component {
+  render(){
+    return(
     <View style={styles.box}>
       <View style={styles.titleContainer}>
-        <Text style={styles.textTitle}>{title}</Text>
+        <Text style={styles.textTitle}>{this.props.title}</Text>
+        <TouchableOpacity onPress={this.props.onPress}>
+          <Image
+            style={{height:30, width:30, alignSelf:'flex-end'}}
+            source={require('../../../res/img/remove-icon.png')}/>
+        </TouchableOpacity>
       </View>
-      <View style={styles.contentBox}>
-        <TextInput
-          placeholder={placeholder}
-          style={styles.input}
-          value={value}
-          onChangeText={onChangeText}/>
-      </View>
+      <Text style={styles.textBox}>{this.props.content}</Text>
     </View>
-  )
+    )
+  }
 }
 const styles = {
-  input: {
-    color: 'rgb(1, 94, 170)',
-    paddingRight: 5,
-    paddingLeft: 5,
-    fontSize:15,
-    lineHeight:25,
-    flex:3
-  },
   box:{
     borderRadius: 3,
     borderWidth: 0.5,
@@ -60,9 +59,5 @@ const styles = {
     paddingLeft:30,
     color:'black'
   },
-  contentBox:{
-    paddingLeft:20,
-    height:80
-  }
 };
-export { Input };
+export {InfoBox2};

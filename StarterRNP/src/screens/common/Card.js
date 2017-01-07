@@ -22,7 +22,8 @@ const styles={
     marginLeft: 5,
     marginRight:5,
     marginTop:10,
+    backgroundColor:'white'
   }
 }
 
-export default Card;
+export { Card };
